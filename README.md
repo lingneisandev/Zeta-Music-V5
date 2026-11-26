@@ -1,10 +1,10 @@
-# FeroX Music
+# Zeta Music V5.0.1
 
 A Discord music bot I built because every "free" music bot out there either sounds terrible, dies every two weeks from a Discord API change, or locks basic loop/queue features behind a paywall. This one's mine, it's fast, and it doesn't do that.
 
 Built on Discord.js v14 + Kazagumo/Shoukaku (Lavalink) for playback, Prisma + SQLite for storage, and the new Components V2 UI so the player panel actually looks like something from 2024 and not a Discord.js tutorial from 2019.
 
-Maintained under **FeroX Devs**.
+Maintained under **Ling Devs**.
 
 ## What it actually does
 
@@ -32,7 +32,7 @@ You'll need:
 Clone it, install dependencies:
 
 ```bash
-git clone https://github.com/RexyExo/FeroX-Music-.git
+git clone https://github.com/lingneisandev/Zeta-Music-V5.git
 cd ferox-music-
 npm install
 ```
