@@ -33,7 +33,7 @@ Clone it, install dependencies:
 
 ```bash
 git clone https://github.com/lingneisandev/Zeta-Music-V5.git
-cd ferox-music-
+cd Zeta-Music-V5
 npm install
 ```
 
@@ -114,4 +114,4 @@ If you're adding a command, drop a file in the right `commands/<category>/` fold
 
 ## License & credit
 
-Built and maintained by FeroX Devs. Do whatever you want with it, just don't strip the credit and resell it as your own bot without at least asking first.
+Original Built and maintained by FeroX Devs. Do whatever you want with it, just don't strip the credit and resell it as your own bot without at least asking first.and Modified by Lingneisandevz for Rebranding and Modified Faillover System.
