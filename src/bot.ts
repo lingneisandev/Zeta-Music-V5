@@ -167,7 +167,7 @@ export class CreoClient extends Client {
       }, 60 * 60 * 1000);
 
       console.log(chalk.gray('      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'));
-      console.log(`      ${themeGradient('» FeroX Music is now Online and Ready «')}`);
+      console.log(`      ${themeGradient('» Zeta Music is now Online and Ready «')}`);
       console.log(chalk.gray('      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n'));
     }
   }
@@ -178,7 +178,79 @@ export class CreoClient extends Client {
       url: process.env.LAVALINK_HOST || process.env.LAVALINK_URL || 'nodelink.gdjkhp.com:443',
       auth: process.env.LAVALINK_PASSWORD || process.env.LAVALINK_AUTH || 'youshallnotpass',
       secure: process.env.LAVALINK_SECURE === 'true'
-    }];
+    },
+    {
+      name: process.env.LAVALINK_BACKUP1_NAME || 'ZetaNode-Backup1',
+      url: process.env.LAVALINK_BACKUP1_URL || '',
+      auth: process.env.LAVALINK_BACKUP1_AUTH || 'youshallnotpass',
+      secure: process.env.LAVALINK_BACKUP1_SECURE === 'true'
+    },
+    {
+      name: process.env.LAVALINK_BACKUP2_NAME || 'ZetaNode-Backup2',
+      url: process.env.LAVALINK_BACKUP2_URL || '',
+      auth: process.env.LAVALINK_BACKUP2_AUTH || 'youshallnotpass',
+      secure: process.env.LAVALINK_BACKUP2_SECURE === 'true'
+    },
+    {
+      name: process.env.LAVALINK_BACKUP3_NAME || 'ZetaNode-Backup3',
+      url: process.env.LAVALINK_BACKUP3_URL || '',
+      auth: process.env.LAVALINK_BACKUP3_AUTH || 'youshallnotpass',
+      secure: process.env.LAVALINK_BACKUP3_SECURE === 'true'
+    },
+    {
+      name: process.env.LAVALINK_BACKUP4_NAME || 'ZetaNode-Backup4',
+      url: process.env.LAVALINK_BACKUP4_URL || '',
+      auth: process.env.LAVALINK_BACKUP4_AUTH || 'youshallnotpass',
+      secure: process.env.LAVALINK_BACKUP4_SECURE === 'true'
+    },
+    {
+      name: process.env.LAVALINK_BACKUP5_NAME || 'ZetaNode-Backup5',
+      url: process.env.LAVALINK_BACKUP5_URL || '',
+      auth: process.env.LAVALINK_BACKUP5_AUTH || 'youshallnotpass',
+      secure: process.env.LAVALINK_BACKUP5_SECURE === 'true'
+    },
+    {
+      name: process.env.LAVALINK_BACKUP6_NAME || 'ZetaNode-Backup6',
+      url: process.env.LAVALINK_BACKUP6_URL || '',
+      auth: process.env.LAVALINK_BACKUP6_AUTH || 'youshallnotpass',
+      secure: process.env.LAVALINK_BACKUP6_SECURE === 'true'
+    },
+    {
+      name: process.env.LAVALINK_BACKUP7_NAME || 'ZetaNode-Backup7',
+      url: process.env.LAVALINK_BACKUP7_URL || '',
+      auth: process.env.LAVALINK_BACKUP7_AUTH || 'youshallnotpass',
+      secure: process.env.LAVALINK_BACKUP7_SECURE === 'true'
+    },
+    {
+      name: process.env.LAVALINK_BACKUP8_NAME || 'ZetaNode-Backup8',
+      url: process.env.LAVALINK_BACKUP8_URL || '',
+      auth: process.env.LAVALINK_BACKUP8_AUTH || 'youshallnotpass',
+      secure: process.env.LAVALINK_BACKUP8_SECURE === 'true'
+    },
+    {
+      name: process.env.LAVALINK_BACKUP9_NAME || 'ZetaNode-Backup9',
+      url: process.env.LAVALINK_BACKUP9_URL || '',
+      auth: process.env.LAVALINK_BACKUP9_AUTH || 'youshallnotpass',
+      secure: process.env.LAVALINK_BACKUP9_SECURE === 'true'
+    },
+    {
+      name: process.env.LAVALINK_BACKUP10_NAME || 'ZetaNode-Backup10',
+      url: process.env.LAVALINK_BACKUP10_URL || '',
+      auth: process.env.LAVALINK_BACKUP10_AUTH || 'youshallnotpass',
+      secure: process.env.LAVALINK_BACKUP10_SECURE === 'true'
+    },
+    {
+      name: process.env.LAVALINK_BACKUP11_NAME || 'ZetaNode-Backup11',
+      url: process.env.LAVALINK_BACKUP11_URL || '',
+      auth: process.env.LAVALINK_BACKUP11_AUTH || 'youshallnotpass',
+      secure: process.env.LAVALINK_BACKUP11_SECURE === 'true'
+    },
+    {
+      name: process.env.LAVALINK_BACKUP12_NAME || 'ZetaNode-Backup12',
+      url: process.env.LAVALINK_BACKUP12_URL || '',
+      auth: process.env.LAVALINK_BACKUP12_AUTH || 'youshallnotpass',
+      secure: process.env.LAVALINK_BACKUP12_SECURE === 'true'
+                   }];
 
     this.music = new Kazagumo({
       defaultSearchEngine: 'youtube_music',
