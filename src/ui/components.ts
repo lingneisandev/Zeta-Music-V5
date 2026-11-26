@@ -5,46 +5,46 @@ import emojis from '../utils/emojis';
 export function createMusicButtons(guildId: string, isPlaying: boolean, loopMode: number, autoplay: boolean = false) {
   const row1 = [
     new ButtonBuilder()
-      .setCustomId(`CreoX:autoplay:${guildId}`)
+      .setCustomId(`Zeta Music :autoplay:${guildId}`)
       .setEmoji(emojis.music.autoplay)
       .setStyle(autoplay ? ButtonStyle.Success : ButtonStyle.Secondary),
     new ButtonBuilder()
-      .setCustomId(`CreoX:prev:${guildId}`)
+      .setCustomId(`Zeta Music :prev:${guildId}`)
       .setEmoji(emojis.music.prev)
       .setStyle(ButtonStyle.Secondary),
     new ButtonBuilder()
-      .setCustomId(`CreoX:pause:${guildId}`)
+      .setCustomId(`Zeta Music :pause:${guildId}`)
       .setEmoji(isPlaying ? emojis.music.pause : emojis.music.play)
       .setStyle(ButtonStyle.Success),
     new ButtonBuilder()
-      .setCustomId(`CreoX:skip:${guildId}`)
+      .setCustomId(`Zeta Music:skip:${guildId}`)
       .setEmoji(emojis.music.next)
       .setStyle(ButtonStyle.Secondary),
     new ButtonBuilder()
-      .setCustomId(`CreoX:loop:${guildId}`)
+      .setCustomId(`Zeta Music :loop:${guildId}`)
       .setEmoji(emojis.music.loop)
       .setStyle(loopMode > 0 ? ButtonStyle.Success : ButtonStyle.Secondary),
   ];
 
   const row2 = [
     new ButtonBuilder()
-      .setCustomId(`CreoX:shuffle:${guildId}`)
+      .setCustomId(`Zeta Music :shuffle:${guildId}`)
       .setEmoji(emojis.music.shuffle)
       .setStyle(ButtonStyle.Secondary),
     new ButtonBuilder()
-      .setCustomId(`CreoX:rewind:${guildId}`)
+      .setCustomId(`Zeta Music :rewind:${guildId}`)
       .setEmoji(emojis.music.back)
       .setStyle(ButtonStyle.Secondary),
     new ButtonBuilder()
-      .setCustomId(`CreoX:stop:${guildId}`)
+      .setCustomId(`Zeta Music :stop:${guildId}`)
       .setEmoji(emojis.music.stop)
       .setStyle(ButtonStyle.Secondary),
     new ButtonBuilder()
-      .setCustomId(`CreoX:forward:${guildId}`)
+      .setCustomId(`Zeta Music :forward:${guildId}`)
       .setEmoji(emojis.music.forward)
       .setStyle(ButtonStyle.Secondary),
     new ButtonBuilder()
-      .setCustomId(`CreoX:heart:${guildId}`)
+      .setCustomId(`Zeta Music :heart:${guildId}`)
       .setEmoji(emojis.music.like)
       .setStyle(ButtonStyle.Secondary),
   ];
