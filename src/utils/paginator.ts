@@ -22,7 +22,7 @@ export function createPaginator(
   );
 
   container.addSeparatorComponents(new SeparatorBuilder().setSpacing(SeparatorSpacingSize.Small));
-  container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`-# Page ${currentPage} / ${totalPages} • Creo - Made By FeroX Devs`));
+  container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`-# Page ${currentPage} / ${totalPages} • Zeta Music Made is Hololive Development Team`));
 
   const row = new ActionRowBuilder<MessageActionRowComponentBuilder>().addComponents(
     new ButtonBuilder()
