@@ -13,7 +13,7 @@ export function updateBotPresence(client: CreoClient) {
       type: ActivityType.Watching,
       state: `Enjoying music on ${activePlayers} server(s) & Prefix: ${prefix}`
     }],
-    status: 'online',
+    status: 'idle',
     afk: false
   });
 }
