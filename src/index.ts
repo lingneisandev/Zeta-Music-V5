@@ -28,8 +28,8 @@ const targetBotFile = join(__dirname, isTypeScript ? 'bot.ts' : 'bot.js');
 const manager = new ShardingManager(targetBotFile, {
   token: process.env.BOT_TOKEN,
   execArgv: isTypeScript 
-    ? ['-r', 'ts-node/register', '--max-old-space-size=256'] 
-    : ['--max-old-space-size=256']
+    ? ['-r', 'ts-node/register', '--max-old-space-size=150'] 
+    : ['--max-old-space-size=150']
 });
 
 manager.on('shardCreate', shard => {
