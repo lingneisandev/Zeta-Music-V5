@@ -26,7 +26,7 @@ export default {
 
     await guildPlayer.resendPanel(client);
     if (player.voiceId) {
-      const statusText = `<a:Playing:1513451285880246322> Listening to: ${track.title}`;
+      const statusText = `<a:cdplayer:1540325442287050773> Listening to: ${track.title}`;
       await setVoiceChannelStatus(client, player.voiceId, statusText);
     }
   }
