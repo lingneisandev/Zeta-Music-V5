@@ -20,7 +20,7 @@ export default {
       title: `${emojis.general.team} Support Server`,
     });
 
-    const supportLink = `https://discord.gg/ferox-music`; // Change if necessary
+    const supportLink = `https://discord.gg/VMbqMG7nUq`; // Change if necessary
 
     const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
       new ButtonBuilder()
