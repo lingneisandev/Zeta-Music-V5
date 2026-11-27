@@ -21,7 +21,7 @@ export default {
     const botName = client.user?.username || 'Bot';
     const c = container(`${emojis.general.dot} Please select a category from the dropdown below to view statistics.`, { 
       title: `${emojis.general.stats_icon} ${botName} Stats`,
-      footer: `${botName} • v1.0.0`
+      footer: `${botName} • v5.0.1`
     });
 
     const customPrefix = 'CreoX';
