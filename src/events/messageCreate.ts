@@ -14,7 +14,7 @@ export default {
       if (blacklisted) return;
     } catch {}
 
-    let prefix = process.env.PREFIX || '$';
+    let prefix = process.env.PREFIX || 'z!';
     try {
       const gConf = await client.db.guildConfig.findUnique({ where: { guildId: message.guildId! } });
       if (gConf && gConf.prefix) prefix = gConf.prefix;
@@ -23,7 +23,7 @@ export default {
     if (message.mentions.has(client.user!.id) && !message.mentions.everyone && message.content.trim() === `<@${client.user!.id}>`) {
       const dot = emojis.general.dot;
       const content = 
-        `## ${emojis.general.home} Welcome to FeroX Music\n` +
+        `## ${emojis.general.home} Welcome to Zeta Music\n` +
         `I am a feature-rich music bot designed to provide the best audio experience on Discord.\n\n` +
         `### ${emojis.general.settings} Getting Started\n` +
         `${dot} **Prefix:** My prefix in this server is \`${prefix}\`\n` +
@@ -35,8 +35,8 @@ export default {
         `3. Use the interactive player buttons to control the music!`;
 
       const ui = container(content, { 
-        title: `${emojis.general.stats_icon} FeroX Introduction`,
-        footer: `FeroX Music • v1.0.0`
+        title: `${emojis.general.stats_icon} Zeta Music Introduction`,
+        footer: `Zeta Music • v5.0.1`
       });
 
       const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
