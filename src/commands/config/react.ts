@@ -32,7 +32,7 @@ export default {
     } else if (sub === 'list') {
       await this.listReact(client, message);
     } else {
-      const prefix = process.env.PREFIX || '$';
+      const prefix = process.env.PREFIX || 'z!';
       const msg = `## ${emojis.general.autoreact} Auto React\n${emojis.general.dot} '${prefix}react add <trigger> <reaction>' - Add an auto-reaction.\n${emojis.general.dot} '${prefix}react remove <trigger>' - Remove an auto-reaction.\n${emojis.general.dot} '${prefix}react list' - List all auto-reactions.`;
       await message.reply(cv2(container(msg, { title: 'Auto-React Manager', color: 'default' })) as any);
     }
