@@ -672,7 +672,7 @@ export class ComponentHandler {
 
         const botName = this.client.user?.username || 'Bot';
         const statsUI = new ContainerBuilder()
-          .addTextDisplayComponents(new TextDisplayBuilder().setContent(`# ${title}\n\n${content}\n\n-# ${botName} • Made By FeroX Devs`));
+          .addTextDisplayComponents(new TextDisplayBuilder().setContent(`# ${title}\n\n${content}\n\n-# ${botName} • Ultimate Bot Music By Hololive Development`));
 
         const select = new StringSelectMenuBuilder()
           .setCustomId(`${customPrefix}:stats_select:${callerId}`)
