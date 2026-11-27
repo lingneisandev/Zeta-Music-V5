@@ -19,7 +19,7 @@ export default {
     }
     updateBotPresence(client);
     if (player.voiceId) {
-      await setVoiceChannelStatus(client, player.voiceId, "<a:music:1515753259636228166> Waiting for music...");
+      await setVoiceChannelStatus(client, player.voiceId, "Already Music Added...");
     }
 
     if (guildPlayer && guildPlayer.autoplay && !guildPlayer.isStopped) {
@@ -48,7 +48,7 @@ export default {
     const c = container("Queue have been ended");
     const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
       new ButtonBuilder().setLabel("Invite Bot").setURL(`https://discord.com/api/oauth2/authorize?client_id=${botId}&permissions=8&scope=bot%20applications.commands`).setStyle(ButtonStyle.Link),
-      new ButtonBuilder().setLabel("Support").setURL("https://discord.gg/Vx43JXddFD").setStyle(ButtonStyle.Link)
+      new ButtonBuilder().setLabel("Support").setURL("https://discord.gg/VMbqMG7nUq").setStyle(ButtonStyle.Link)
     );
     c.addActionRowComponents(row as any);
 
