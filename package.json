@@ -1,12 +1,12 @@
 {
-  "name": "ferox-music",
-  "version": "1.0.0",
-  "description": "",
+  "name": "zeta-music",
+  "version": "5.0.1",
+  "description": "zeta music new feature",
   "main": "src/index.ts",
   "scripts": {
     "build": "tsc",
-    "start": "tsc && node --max-old-space-size=256 dist/index.js",
-    "start:single": "tsc && node --max-old-space-size=256 dist/bot.js",
+    "start": "tsc && node --max-old-space-size=150 dist/index.js",
+    "start:single": "tsc && node --max-old-space-size=150 dist/bot.js",
     "dev": "nodemon --watch src --ext ts --exec ts-node --transpile-only src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
