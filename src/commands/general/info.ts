@@ -7,7 +7,7 @@ import emojis from '../../utils/emojis';
 export default {
   data: new SlashCommandBuilder()
     .setName('info')
-    .setDescription('View information about the Creo bot.'),
+    .setDescription('View information about the Zeta Music bot.'),
   category: 'general',
   aliases: ['info'],
 
@@ -41,8 +41,8 @@ export default {
     c.addSeparatorComponents(new SeparatorBuilder());
 
     const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
-      new ButtonBuilder().setLabel("Support Server").setURL("https://discord.gg/Vx43JXddFD").setStyle(ButtonStyle.Link),
-      new ButtonBuilder().setLabel("Invite Creo").setURL(`https://discord.com/api/oauth2/authorize?client_id=${client.user!.id}&permissions=8&scope=bot%20applications.commands`).setStyle(ButtonStyle.Link)
+      new ButtonBuilder().setLabel("Support Server").setURL("https://discord.gg/VMbqMG7nUq").setStyle(ButtonStyle.Link),
+      new ButtonBuilder().setLabel("Invite Zeta Music").setURL(`https://discord.com/api/oauth2/authorize?client_id=${client.user!.id}&permissions=8&scope=bot%20applications.commands`).setStyle(ButtonStyle.Link)
     );
 
     c.addActionRowComponents(row as any);
