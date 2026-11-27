@@ -21,7 +21,7 @@ export default {
     const targetId = targetMatch[1];
 
     if (!action) {
-      const prefix = process.env.PREFIX || '$';
+      const prefix = process.env.PREFIX || 'z!';
       return message.reply(cv2(error(`Usage: \`${prefix}admin <add|remove|list> [@user]\``)) as any);
     }
 
@@ -57,25 +57,25 @@ export default {
         update: {},
         create: { userId: user.id }
       });
-      await reply(cv2(container(`Successfully added <@${user.id}> to admin list.`, { title: 'Creo Admin', color: 'success' })) as any);
+      await reply(cv2(container(`Successfully added <@${user.id}> to admin list.`, { title: 'Zeta Music Admin', color: 'success' })) as any);
     } else if (action === 'remove' && user) {
       const existing = await client.db.adminUser.findUnique({ where: { userId: user.id } });
       if (existing) {
         await client.db.adminUser.delete({ where: { userId: user.id } });
-        await reply(cv2(container(`Successfully removed <@${user.id}> from admin list.`, { title: 'Creo Admin', color: 'success' })) as any);
+        await reply(cv2(container(`Successfully removed <@${user.id}> from admin list.`, { title: 'Zeta Music Admin', color: 'success' })) as any);
       } else {
-        await reply(cv2(container(`**${user.tag}** was not in the admin list.`, { title: 'Creo Admin', color: 'error' })) as any);
+        await reply(cv2(container(`**${user.tag}** was not in the admin list.`, { title: 'Zeta Music Admin', color: 'error' })) as any);
       }
     } else if (action === 'list') {
       const data = await client.db.adminUser.findMany();
       if (data.length > 0) {
         const usersList = data.map(d => `<@${d.userId}> (\`${d.userId}\`)`).join('\n');
-        await reply(cv2(container(usersList, { title: 'Creo Admin Users', color: 'success' })) as any);
+        await reply(cv2(container(usersList, { title: 'Zeta Music Admin Users', color: 'success' })) as any);
       } else {
-        await reply(cv2(container(`No admin users found.`, { title: 'Creo Admin Users', color: 'success' })) as any);
+        await reply(cv2(container(`No admin users found.`, { title: 'Zeta Music Admin Users', color: 'success' })) as any);
       }
     } else {
-      await reply(cv2(container('Invalid action.', { title: 'Creo Admin', color: 'error' })) as any);
+      await reply(cv2(container('Invalid action.', { title: 'Zeta Music Admin', color: 'error' })) as any);
     }
   }
 };
