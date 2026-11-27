@@ -256,8 +256,8 @@ export class CreoClient extends Client {
       defaultSearchEngine: 'youtube_music',
       plugins: [
         new KazagumoSpotify({
-          clientId: process.env.SPOTIFY_CLIENT_ID || 'f940b5f13ef44ab7afcbcc97fb6ec07c',
-          clientSecret: process.env.SPOTIFY_CLIENT_SECRET || 'b3353bc77db8487ba2df4dc98eec2e6c',
+          clientId: process.env.SPOTIFY_CLIENT_ID || '',
+          clientSecret: process.env.SPOTIFY_CLIENT_SECRET || '',
           playlistPageLimit: 2,
           albumPageLimit: 2,
           searchLimit: 10,
