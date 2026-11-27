@@ -19,7 +19,7 @@ export default {
   aliases: ['pl', 'playlist', 'save'],
 
   async prefixExecute(client: CreoClient, message: any, args: string[]) {
-    let prefix = process.env.PREFIX || '$';
+    let prefix = process.env.PREFIX || 'z!';
     try {
       const gConf = await client.db.guildConfig.findUnique({ where: { guildId: message.guildId! } });
       if (gConf && gConf.prefix) prefix = gConf.prefix;
@@ -46,7 +46,7 @@ export default {
     } else if (sub === 'info') {
       await this.info(client, message, args.slice(1).join(' '));
     } else {
-      await message.reply(cv2(container(`Usage: \`${prefix}playlist <create|delete|add|list|play|addqueue|info> <name>\``, { title: 'Creo Playlists', color: 'default' })) as any);
+      await message.reply(cv2(container(`Usage: \`${prefix}playlist <create|delete|add|list|play|addqueue|info> <name>\``, { title: 'Zeta Music Playlists', color: 'default' })) as any);
     }
   },
 
@@ -81,18 +81,18 @@ export default {
     };
     const authorId = isInteraction ? context.user.id : context.author.id;
 
-    if (!name) return reply(cv2(container('Please provide a playlist name.', { title: 'Creo Playlists', color: 'error' })) as any);
+    if (!name) return reply(cv2(container('Please provide a playlist name.', { title: 'Zeta Music Playlists', color: 'error' })) as any);
 
     try {
       const existing = await client.db.playlist.findFirst({ where: { userId: authorId, name } });
       if (existing) {
-        return reply(cv2(container(`You already have a playlist named \`${name}\`.`, { title: 'Creo Playlists', color: 'error' })) as any);
+        return reply(cv2(container(`You already have a playlist named \`${name}\`.`, { title: 'Zeta Music Playlists', color: 'error' })) as any);
       }
 
       await client.db.playlist.create({ data: { userId: authorId, name } });
-      await reply(cv2(container(`Successfully created playlist \`${name}\`.`, { title: 'Creo Playlists', color: 'success' })) as any);
+      await reply(cv2(container(`Successfully created playlist \`${name}\`.`, { title: 'Zeta Music Playlists', color: 'success' })) as any);
     } catch (e: any) {
-      await reply(cv2(container(`Error creating playlist: ${e.message}`, { title: 'Creo Playlists', color: 'error' })) as any);
+      await reply(cv2(container(`Error creating playlist: ${e.message}`, { title: 'Zeta Music Playlists', color: 'error' })) as any);
     }
   },
 
@@ -101,19 +101,19 @@ export default {
     const reply = (content: any) => isInteraction ? context.reply(content) : context.reply(content);
     const authorId = isInteraction ? context.user.id : context.author.id;
 
-    if (!name) return reply(cv2(container('Please provide a playlist name.', { title: 'Creo Playlists', color: 'error' })) as any);
+    if (!name) return reply(cv2(container('Please provide a playlist name.', { title: 'Zeta Music Playlists', color: 'error' })) as any);
 
     try {
       const existing = await client.db.playlist.findFirst({ where: { userId: authorId, name } });
       if (!existing) {
-        const prefix = process.env.PREFIX || '$';
-        return reply(cv2(container(`You do not have a playlist named \`${name}\`.`, { title: 'Creo Playlists', color: 'error' })) as any);
+        const prefix = process.env.PREFIX || 'z!';
+        return reply(cv2(container(`You do not have a playlist named \`${name}\`.`, { title: 'Zeta Music Playlists', color: 'error' })) as any);
       }
 
       await client.db.playlist.delete({ where: { id: existing.id } });
-      await reply(cv2(container(`Successfully deleted playlist \`${name}\`.`, { title: 'Creo Playlists', color: 'success' })) as any);
+      await reply(cv2(container(`Successfully deleted playlist \`${name}\`.`, { title: 'Zeta Music Playlists', color: 'success' })) as any);
     } catch (e: any) {
-      await reply(cv2(container(`Error deleting playlist: ${e.message}`, { title: 'Creo Playlists', color: 'error' })) as any);
+      await reply(cv2(container(`Error deleting playlist: ${e.message}`, { title: 'Zeta Music Playlists', color: 'error' })) as any);
     }
   },
 
@@ -122,11 +122,11 @@ export default {
     const reply = (content: any) => isInteraction ? context.reply(content) : context.reply(content);
     const authorId = isInteraction ? context.user.id : context.author.id;
 
-    if (!name) return reply(cv2(container('Please provide a playlist name.', { title: 'Creo Playlists', color: 'error' })) as any);
+    if (!name) return reply(cv2(container('Please provide a playlist name.', { title: 'Zeta Music Playlists', color: 'error' })) as any);
 
     const player = client.music.players.get(context.guildId!);
     if (!player || !player.queue.current) {
-      return reply(cv2(container('No track currently playing.', { title: 'Creo Playlists', color: 'error' })) as any);
+      return reply(cv2(container('No track currently playing.', { title: 'Zeta Music Playlists', color: 'error' })) as any);
     }
 
     const track = player.queue.current;
@@ -139,13 +139,13 @@ export default {
       }
 
       if (!playlist) {
-        const prefix = process.env.PREFIX || '$';
-        return reply(cv2(container(`You do not have a playlist named \`${name}\`. Use \`$playlist create ${name}\` first.`, { title: 'Creo Playlists', color: 'error' })) as any);
+        const prefix = process.env.PREFIX || 'z!';
+        return reply(cv2(container(`You do not have a playlist named \`${name}\`. Use \`$playlist create ${name}\` first.`, { title: 'Zeta Music Playlists', color: 'error' })) as any);
       }
 
       const existingTrack = await client.db.playlistTrack.findFirst({ where: { playlistId: playlist.id, uri: track.uri! } });
       if (existingTrack) {
-        return reply(cv2(container(`The track \`${track.title}\` is already in playlist \`${name}\`.`, { title: 'Creo Playlists', color: 'error' })) as any);
+        return reply(cv2(container(`The track \`${track.title}\` is already in playlist \`${name}\`.`, { title: 'Zeta Music Playlists', color: 'error' })) as any);
       }
 
       await client.db.playlistTrack.create({
@@ -160,9 +160,9 @@ export default {
         }
       });
 
-      await reply(cv2(container(`Added \`${track.title}\` to playlist \`${name}\`.`, { title: 'Creo Playlists', color: 'success' })) as any);
+      await reply(cv2(container(`Added \`${track.title}\` to playlist \`${name}\`.`, { title: 'Zeta Music Playlists', color: 'success' })) as any);
     } catch (e: any) {
-      await reply(cv2(container(`Error adding to playlist: ${e.message}`, { title: 'Creo Playlists', color: 'error' })) as any);
+      await reply(cv2(container(`Error adding to playlist: ${e.message}`, { title: 'Zeta Music Playlists', color: 'error' })) as any);
     }
   },
 
@@ -175,15 +175,15 @@ export default {
       if (!name) {
         const playlists = await client.db.playlist.findMany({ where: { userId: authorId }, include: { _count: { select: { tracks: true } } } });
         if (playlists.length === 0) {
-          return reply(cv2(container('You have no playlists.', { title: 'Creo Playlists', color: 'default' })) as any);
+          return reply(cv2(container('You have no playlists.', { title: 'Zeta Music Playlists', color: 'default' })) as any);
         }
         const content = playlists.map(p => `${emojis.general.dot} **${p.name}** - ${p._count.tracks} tracks`).join('\n');
         await reply(cv2(container(content, { title: 'Your Playlists', color: 'default' })) as any);
       } else {
         const playlist = await client.db.playlist.findFirst({ where: { userId: authorId, name }, include: { tracks: true } });
         if (!playlist) {
-          const prefix = process.env.PREFIX || '$';
-        return reply(cv2(container(`You do not have a playlist named \`${name}\`.`, { title: 'Creo Playlists', color: 'error' })) as any);
+          const prefix = process.env.PREFIX || 'z!';
+        return reply(cv2(container(`You do not have a playlist named \`${name}\`.`, { title: 'Zeta Music Playlists', color: 'error' })) as any);
         }
         if (playlist.tracks.length === 0) {
           return reply(cv2(container(`Playlist \`${name}\` is empty.`, { title: `Playlist: ${name}`, color: 'default' })) as any);
@@ -193,7 +193,7 @@ export default {
         await reply(cv2(container(content + footer, { title: `Playlist: ${name}`, color: 'default' })) as any);
       }
     } catch (e: any) {
-      await reply(cv2(container(`Error listing playlists: ${e.message}`, { title: 'Creo Playlists', color: 'error' })) as any);
+      await reply(cv2(container(`Error listing playlists: ${e.message}`, { title: 'Zeta Music Playlists', color: 'error' })) as any);
     }
   },
 
@@ -207,21 +207,21 @@ export default {
     };
     const authorId = isInteraction ? context.user.id : context.author.id;
 
-    if (!name) return reply(cv2(container('Please provide a playlist name.', { title: 'Creo Playlists', color: 'error' })) as any);
+    if (!name) return reply(cv2(container('Please provide a playlist name.', { title: 'Zeta Music Playlists', color: 'error' })) as any);
 
     const member = context.member || await context.guild.members.fetch(authorId).catch(() => null);
     if (!member || !member.voice.channel) {
-      return reply(cv2(container('You must be in a voice channel to play music.', { title: 'Creo Playlists', color: 'error' })) as any);
+      return reply(cv2(container('You must be in a voice channel to play music.', { title: 'Zeta Music Playlists', color: 'error' })) as any);
     }
 
     try {
       const playlist = await client.db.playlist.findFirst({ where: { userId: authorId, name }, include: { tracks: true } });
       if (!playlist) {
-        const prefix = process.env.PREFIX || '$';
-        return reply(cv2(container(`You do not have a playlist named \`${name}\`.`, { title: 'Creo Playlists', color: 'error' })) as any);
+        const prefix = process.env.PREFIX || 'z!';
+        return reply(cv2(container(`You do not have a playlist named \`${name}\`.`, { title: 'Zeta Music Playlists', color: 'error' })) as any);
       }
       if (playlist.tracks.length === 0) {
-        return reply(cv2(container(`Playlist \`${name}\` is empty.`, { title: 'Creo Playlists', color: 'error' })) as any);
+        return reply(cv2(container(`Playlist \`${name}\` is empty.`, { title: 'Zeta Music Playlists', color: 'error' })) as any);
       }
 
       let player = client.music.players.get(context.guildId!);
@@ -250,7 +250,7 @@ export default {
         player.play();
       }
 
-      const successMsg = cv2(container(`Added **${loaded}** tracks from \`${name}\` to the queue!`, { title: 'Creo Playlists', color: 'success' }));
+      const successMsg = cv2(container(`Added **${loaded}** tracks from \`${name}\` to the queue!`, { title: 'Zeta Music Playlists', color: 'success' }));
       if (isInteraction) {
         await context.editReply(successMsg as any);
       } else {
@@ -259,7 +259,7 @@ export default {
       }
 
     } catch (e: any) {
-      await reply(cv2(container(`Error playing playlist: ${e.message}`, { title: 'Creo Playlists', color: 'error' })) as any);
+      await reply(cv2(container(`Error playing playlist: ${e.message}`, { title: 'Zeta Music Playlists', color: 'error' })) as any);
     }
   },
 
@@ -267,15 +267,15 @@ export default {
     const isInteraction = !!context.isCommand;
     const reply = (content: any) => isInteraction ? context.reply(content) : context.reply(content);
     const authorId = isInteraction ? context.user.id : context.author.id;
-    if (!name) return reply(cv2(container('Please provide a playlist name.', { title: 'Creo Playlists', color: 'error' })) as any);
+    if (!name) return reply(cv2(container('Please provide a playlist name.', { title: 'Zeta Music Playlists', color: 'error' })) as any);
     const player = client.music.players.get(context.guildId!);
     if (!player || (!player.queue.current && player.queue.length === 0)) {
-      return reply(cv2(container('The queue is empty.', { title: 'Creo Playlists', color: 'error' })) as any);
+      return reply(cv2(container('The queue is empty.', { title: 'Zeta Music Playlists', color: 'error' })) as any);
     }
     try {
       const playlist = await client.db.playlist.findFirst({ where: { userId: authorId, name } });
       if (!playlist) {
-        return reply(cv2(container(`You do not have a playlist named \`${name}\`.`, { title: 'Creo Playlists', color: 'error' })) as any);
+        return reply(cv2(container(`You do not have a playlist named \`${name}\`.`, { title: 'Zeta Music Playlists', color: 'error' })) as any);
       }
       const tracksToAdd = [];
       if (player.queue.current) tracksToAdd.push(player.queue.current);
@@ -304,7 +304,7 @@ export default {
         added++;
       }
       const skippedMsg = skipped > 0 ? `\n(Skipped ${skipped} duplicate songs)` : '';
-      await reply(cv2(container(`Added \`${added}\` new tracks from the queue to playlist \`${name}\`.${skippedMsg}`, { title: 'Creo Playlists', color: 'success' })) as any);
+      await reply(cv2(container(`Added \`${added}\` new tracks from the queue to playlist \`${name}\`.${skippedMsg}`, { title: 'Zeta Music Playlists', color: 'success' })) as any);
     } catch (e: any) {
       await reply(cv2(container(`Error: ${e.message}`, { title: 'Creo Playlists', color: 'error' })) as any);
     }
@@ -314,18 +314,18 @@ export default {
     const isInteraction = !!context.isCommand;
     const reply = (content: any) => isInteraction ? context.reply(content) : context.reply(content);
     const authorId = isInteraction ? context.user.id : context.author.id;
-    if (!name) return reply(cv2(container('Please provide a playlist name.', { title: 'Creo Playlists', color: 'error' })) as any);
+    if (!name) return reply(cv2(container('Please provide a playlist name.', { title: 'Zeta Music Playlists', color: 'error' })) as any);
     try {
       const playlist = await client.db.playlist.findFirst({ where: { userId: authorId, name }, include: { tracks: true } });
       if (!playlist) {
-        return reply(cv2(container(`You do not have a playlist named \`${name}\`.`, { title: 'Creo Playlists', color: 'error' })) as any);
+        return reply(cv2(container(`You do not have a playlist named \`${name}\`.`, { title: 'Zeta Music Playlists', color: 'error' })) as any);
       }
       if (playlist.tracks.length === 0) return reply(cv2(container(`Playlist \`${name}\` is empty.`, { title: `Playlist: ${name}`, color: 'default' })) as any);
       const content = playlist.tracks.slice(0, 50).map((t, i) => `**${i + 1}.** [${t.title}](${t.uri})`).join('\n');
       const footer = playlist.tracks.length > 50 ? `\n\n*...and ${playlist.tracks.length - 50} more tracks*` : '';
       await reply(cv2(container(content + footer, { title: `Playlist: ${name}`, color: 'default' })) as any);
     } catch (e: any) {
-      await reply(cv2(container(`Error: ${e.message}`, { title: 'Creo Playlists', color: 'error' })) as any);
+      await reply(cv2(container(`Error: ${e.message}`, { title: 'Zeta Music Playlists', color: 'error' })) as any);
     }
   }
 };
