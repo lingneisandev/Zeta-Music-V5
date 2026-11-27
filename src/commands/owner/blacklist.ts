@@ -28,7 +28,7 @@ export default {
     }
 
     if (!action || !targetId) {
-      const prefix = process.env.PREFIX || '$';
+      const prefix = process.env.PREFIX || 'z!';
       return message.reply(cv2(error(`Usage: \`${prefix}blacklist <add|remove|list> <@user> [reason]\``)) as any);
     }
 
