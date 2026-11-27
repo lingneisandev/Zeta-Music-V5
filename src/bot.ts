@@ -253,7 +253,7 @@ export class CreoClient extends Client {
                    }].filter((node) => node.url.trim() !== '');
 
     this.music = new Kazagumo({
-      defaultSearchEngine: 'youtube_music',
+      defaultSearchEngine: 'youtube',
       plugins: [
         new KazagumoSpotify({
           clientId: process.env.SPOTIFY_CLIENT_ID || '',
