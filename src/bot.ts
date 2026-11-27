@@ -250,7 +250,7 @@ export class CreoClient extends Client {
       url: process.env.LAVALINK_BACKUP12_URL || '',
       auth: process.env.LAVALINK_BACKUP12_AUTH || 'youshallnotpass',
       secure: process.env.LAVALINK_BACKUP12_SECURE === 'true'
-                   }];
+                   }].filter((node) => node.url.trim() !== '');
 
     this.music = new Kazagumo({
       defaultSearchEngine: 'youtube_music',
@@ -267,7 +267,14 @@ export class CreoClient extends Client {
         const guild = this.guilds.cache.get(guildId);
         if (guild) guild.shard.send(payload);
       }
-    }, new Connectors.DiscordJS(this), Nodes);
+    }, new Connectors.DiscordJS(this), Nodes, {
+      moveOnDisconnect: true,
+      resumable: true,
+      resumableTimeout: 30,
+      reconnectTries: 5,
+      reconnectInterval: 5000,
+      restTimeout: 10000
+    });
 
     this.musicHandler.load();
   }
