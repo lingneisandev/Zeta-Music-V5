@@ -15,7 +15,7 @@ export default {
     }
     updateBotPresence(client);
     if (player.voiceId) {
-      await setVoiceChannelStatus(client, player.voiceId, "<a:music:1515753259636228166> Waiting for music...");
+      await setVoiceChannelStatus(client, player.voiceId, "Already Music Added...");
     }
   }
 };
