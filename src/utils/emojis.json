@@ -1,30 +1,30 @@
 {
   "general": {
-    "stats": "<:emoji_7:1454496686058635315>",
-    "team": "<:Staff:1513801379909603379>",
-    "system": "<:emoji_12:1454496512662044846>",
-    "ping": "<:emoji_23:1454496565749350545>",
-    "music": "<:emoji_13:1454496515966898368>",
-    "home": "<:emoji_28:1454496582572703765>",
-    "customization": "<:emoji_34:1454496618509500540>",
-    "autoreact": "<:emoji_3:1454496588503318706>",
-    "ignore": "<:Ignore:1513802555342327868>",
-    "premium": "<:emoji_27:1454496579120660555>",
-    "fun": "<:emoji_33:1454496615581614293>",
-    "owner": "<a:brown:1513803373386797076>",
-    "dot": "<:dot:1513438825391853598>",
+    "stats": "<:graphic:1540327687363494030>",
+    "team": "<:communitymanager:1540327979811479562>",
+    "system": "🖥️",
+    "ping": "<:green:1540327828266946631>",
+    "music": "🎵",
+    "home": "🏠",
+    "customization": "🔧",
+    "autoreact": "<a:verification:1540326105607839744>",
+    "ignore": "<a:verifivationrd:1540328179850412143>",
+    "premium": "💵",
+    "fun": "🌸",
+    "owner": "<:owner:1540327945296547942>",
+    "dot": "<:wingandswordids:1540328032592597043>",
     "loading": "<a:brown_loadingBT:1513803612839743568>",
-    "settings": "<:emoji_34:1454496618509500540>",
-    "stats_icon": "<:emoji_16:1454496524796039233>",
-    "latency": "<:emoji_23:1454496565749350545>",
-    "tick": "<:emoji_9:1454496680803303505>",
-    "cross": "<:emoji_8:1454496683198120062>"
+    "settings": "⚙️",
+    "stats_icon": "💻",
+    "latency": "🔌",
+    "tick": "<a:verification:1540326105607839744>",
+    "cross": "<:warning:1540328891938504774>"
   },
   "badges": {
-    "member": "<:emoji_46:1454496637970940055>",
-    "owner": "<a:brown:1513803373386797076>",
-    "admin": "<a:brown:1513803373386797076>",
-    "premium": "<:emoji_27:1454496579120660555>"
+    "member": "<:member1:1540327750567731240>",
+    "owner": "<<:owner:1540327945296547942>",
+    "admin": "<:communitymanager:1540327979811479562>",
+    "premium": "💵"
   },
   "music": {
     "autoplay": "<:emoji_4:1454496677879873659>",
@@ -38,20 +38,20 @@
     "stop": "<:emoji_37:1454496628424839168>",
     "forward": "<:emoji_15:1454496522224795925>",
     "like": "<:emoji_40:1454496675069431882>",
-    "youtube": "<:emoji_39:1454496634770817054>",
+    "youtube": "<:youtube:1540325795682066463>",
     "soundcloud": "<:soundcloud:1513805493192360077>",
-    "spotify": "<:emoji_36:1454496625438228613>",
+    "spotify": "<:spotify:1540325885431910470>",
     "jiosaavn": "<:jiosaavn:1513805340691529728>",
     "deezer": "<:Deezer:1515666887302840330>",
-    "playing": "<a:Playing:1513451285880246322>"
+    "playing": "<a:cdplayer:1540325442287050773>"
   },
   "help": {
-    "dance": "<:emoji_3:1454496588503318706>",
-    "peach": "<:emoji_26:1454496575454974155>"
+    "dance": "💃",
+    "peach": "⁉️"
   },
   "owner_reacts": {
-    "botowners": "<a:brown:1513803373386797076>",
-    "owenr": "<a:brown:1513803373386797076>"
+    "botowners": "<:owner:1540327945296547942>",
+    "owenr": "<:owner:1540327945296547942>"
   },
   "noprefix": {
     "week": "⏳",
