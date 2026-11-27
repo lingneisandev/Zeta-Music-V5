@@ -15,7 +15,7 @@ export default {
     if (!player) return message.reply(cv2(error('Nothing playing.')) as any);
 
     if (!args[0] || isNaN(parseInt(args[0]))) {
-      let prefix = process.env.PREFIX || '$';
+      let prefix = process.env.PREFIX || 'z!';
       try {
         const gConf = await client.db.guildConfig.findUnique({ where: { guildId: message.guildId! } });
         if (gConf && gConf.prefix) prefix = gConf.prefix;
