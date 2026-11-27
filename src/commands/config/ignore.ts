@@ -28,7 +28,7 @@ export default {
     } else if (sub === 'list') {
       await this.listIgnore(client, message);
     } else {
-      await message.reply(cv2(container('Invalid subcommand. Use `add`, `remove`, or `list`.', { title: 'Creo Ignore', color: 'error' })) as any);
+      await message.reply(cv2(container('Invalid subcommand. Use `add`, `remove`, or `list`.', { title: 'Zeta Ignore', color: 'error' })) as any);
     }
   },
 
@@ -55,9 +55,9 @@ export default {
         update: {},
         create: { guildId: context.guildId!, channelId }
       });
-      await reply(cv2(container(`Successfully added <#${channelId}> to ignored channels.`, { title: 'Creo Ignore', color: 'success' })) as any);
+      await reply(cv2(container(`Successfully added <#${channelId}> to ignored channels.`, { title: 'Zeta Ignore', color: 'success' })) as any);
     } catch (e: any) {
-      await reply(cv2(container(`Failed to ignore channel: ${e.message}`, { title: 'Creo Ignore', color: 'error' })) as any);
+      await reply(cv2(container(`Failed to ignore channel: ${e.message}`, { title: 'Zeta Ignore', color: 'error' })) as any);
     }
   },
 
@@ -69,9 +69,9 @@ export default {
       await client.db.ignoredChannel.delete({
         where: { guildId_channelId: { guildId: context.guildId!, channelId } }
       });
-      await reply(cv2(container(`Successfully removed <#${channelId}> from ignored channels.`, { title: 'Creo Ignore', color: 'success' })) as any);
+      await reply(cv2(container(`Successfully removed <#${channelId}> from ignored channels.`, { title: 'Zeta Ignore', color: 'success' })) as any);
     } catch (e: any) {
-      await reply(cv2(container(`<#${channelId}> was not in the ignored channels list.`, { title: 'Creo Ignore', color: 'error' })) as any);
+      await reply(cv2(container(`<#${channelId}> was not in the ignored channels list.`, { title: 'Zeta Ignore', color: 'error' })) as any);
     }
   },
 
@@ -81,7 +81,7 @@ export default {
 
     const channels = await client.db.ignoredChannel.findMany({ where: { guildId: context.guildId! } });
     if (channels.length === 0) {
-      return reply(cv2(container('No channels are currently ignored in this server.', { title: 'Creo Ignore', color: 'default' })) as any);
+      return reply(cv2(container('No channels are currently ignored in this server.', { title: 'Zeta Ignore', color: 'default' })) as any);
     }
 
     const content = channels.map(c => `<#${c.channelId}> (\`${c.channelId}\`)`).join('\n');
