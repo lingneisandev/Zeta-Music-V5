@@ -56,14 +56,14 @@ export default {
     const isPremium = await client.db.premiumUser.findUnique({ where: { userId: authorId } });
     const ownerIds = process.env.OWNER_ID?.split(',').map(id => id.trim()) || [];
     if (!isPremium && !ownerIds.includes(authorId)) {
-      return reply(cv2(container('This command is exclusively for Premium Users.', { title: 'Creo Premium', color: 'error' })) as any);
+      return reply(cv2(container('This command is exclusively for Premium Users.', { title: 'Zeta Music Premium', color: 'error' })) as any);
     }
 
     
 
     const member = context.member || await context.guild.members.fetch(authorId).catch(() => null);
     if (!member || !member.voice.channel) {
-      return reply(cv2(container('You must be in a voice channel to activate 24/7 mode.', { title: 'Creo 24/7', color: 'error' })) as any);
+      return reply(cv2(container('You must be in a voice channel to activate 24/7 mode.', { title: 'Zeta Music 24/7', color: 'error' })) as any);
     }
 
     const channel = member.voice.channel as VoiceChannel;
@@ -84,9 +84,9 @@ export default {
         shardId: context.guild.shardId
       });
 
-      await reply(cv2(container(`24/7 mode activated in **${channel.name}**. The bot will stay in this channel permanently.`, { title: 'Creo 24/7', color: 'success' })) as any);
+      await reply(cv2(container(`24/7 mode activated in **${channel.name}**. The bot will stay in this channel permanently.`, { title: 'Zeta Music 24/7', color: 'success' })) as any);
     } catch (e: any) {
-      await reply(cv2(container(`Failed to join voice channel: \`${e.message}\``, { title: 'Creo 24/7', color: 'error' })) as any);
+      await reply(cv2(container(`Failed to join voice channel: \`${e.message}\``, { title: 'Zeta Music 24/7', color: 'error' })) as any);
     }
   },
 
@@ -98,14 +98,14 @@ export default {
     const isPremium = await client.db.premiumUser.findUnique({ where: { userId: authorId } });
     const ownerIds = process.env.OWNER_ID?.split(',').map(id => id.trim()) || [];
     if (!isPremium && !ownerIds.includes(authorId)) {
-      return reply(cv2(container('This command is exclusively for Premium Users.', { title: 'Creo Premium', color: 'error' })) as any);
+      return reply(cv2(container('This command is exclusively for Premium Users.', { title: 'Zeta Music Premium', color: 'error' })) as any);
     }
 
     
 
     const data = await client.db.vc247.findUnique({ where: { guildId: context.guildId! } });
     if (!data) {
-      return reply(cv2(container('24/7 mode is not active in this server.', { title: 'Creo 24/7', color: 'error' })) as any);
+      return reply(cv2(container('24/7 mode is not active in this server.', { title: 'Zeta Music 24/7', color: 'error' })) as any);
     }
 
     await client.db.vc247.delete({ where: { guildId: context.guildId! } });
@@ -115,7 +115,7 @@ export default {
       player.destroy();
     }
 
-    await reply(cv2(container('24/7 mode deactivated. The bot has left the voice channel.', { title: 'Creo 24/7', color: 'success' })) as any);
+    await reply(cv2(container('24/7 mode deactivated. The bot has left the voice channel.', { title: 'Zeta Music 24/7', color: 'success' })) as any);
   },
 
   async list(client: CreoClient, context: any) {
@@ -126,12 +126,12 @@ export default {
     const isAdmin = await client.db.adminUser.findUnique({ where: { userId: authorId } });
     const ownerIds = process.env.OWNER_ID?.split(',').map(id => id.trim()) || [];
     if (!isAdmin && !ownerIds.includes(authorId)) {
-      return reply(cv2(container('This command is exclusively for Bot Admins and the Bot Owner.', { title: 'Creo 24/7', color: 'error' })) as any);
+      return reply(cv2(container('This command is exclusively for Bot Admins and the Bot Owner.', { title: 'Zeta Music 24/7', color: 'error' })) as any);
     }
 
     const vcs = await client.db.vc247.findMany();
     if (vcs.length === 0) {
-      return reply(cv2(container('No active 24/7 channels found.', { title: 'Creo 24/7', color: 'error' })) as any);
+      return reply(cv2(container('No active 24/7 channels found.', { title: 'Zeta Music 24/7', color: 'error' })) as any);
     }
 
     const content = vcs.map(v => `• <#${v.channelId}> in Guild \`${v.guildId}\``).join('\n');
@@ -146,12 +146,12 @@ export default {
     const isAdmin = await client.db.adminUser.findUnique({ where: { userId: authorId } });
     const ownerIds = process.env.OWNER_ID?.split(',').map(id => id.trim()) || [];
     if (!isAdmin && !ownerIds.includes(authorId)) {
-      return reply(cv2(container('This command is exclusively for Bot Admins and the Bot Owner.', { title: 'Creo 24/7', color: 'error' })) as any);
+      return reply(cv2(container('This command is exclusively for Bot Admins and the Bot Owner.', { title: 'Zeta Music 24/7', color: 'error' })) as any);
     }
 
     const vc = await client.db.vc247.findFirst({ where: { channelId } });
     if (!vc) {
-      return reply(cv2(container('That channel ID is not in the active 24/7 list.', { title: 'Creo 24/7', color: 'error' })) as any);
+      return reply(cv2(container('That channel ID is not in the active 24/7 list.', { title: 'Zeta Music 24/7', color: 'error' })) as any);
     }
 
     await client.db.vc247.delete({ where: { guildId: vc.guildId } });
@@ -161,7 +161,7 @@ export default {
       player.destroy();
     }
 
-    await reply(cv2(container(`Removed 24/7 mode from DB and disconnected channel \`${channelId}\`.`, { title: 'Creo 24/7', color: 'success' })) as any);
+    await reply(cv2(container(`Removed 24/7 mode from DB and disconnected channel \`${channelId}\`.`, { title: 'Zeta Music 24/7', color: 'success' })) as any);
   }
 };
 
