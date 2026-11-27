@@ -16,7 +16,7 @@ const hasBuiltJs = fs.existsSync('./dist/index.js');
 
 if (hasBuiltJs) {
     console.log('[SYSTEM] Starting bot in Lightweight Production Mode (dist/index.js)...');
-    const child = spawn('node', ['--max-old-space-size=256', './dist/index.js'], { stdio: 'inherit' });
+    const child = spawn('node', ['--max-old-space-size=150', './dist/index.js'], { stdio: 'inherit' });
     child.on('exit', (code) => process.exit(code));
 } else {
     console.log('[SYSTEM] Starting bot in TypeScript Mode (src/index.ts)...');
