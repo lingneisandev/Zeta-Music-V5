@@ -32,7 +32,7 @@ export default {
     } else if (sub === 'list') {
       await this.listRespond(client, message);
     } else {
-      const prefix = process.env.PREFIX || '$';
+      const prefix = process.env.PREFIX || 'z!';
       const msg = `## ${emojis.general.autoreact} Auto Respond\n${emojis.general.dot} '${prefix}respond add <trigger> <response>' - Add an auto-response.\n${emojis.general.dot} '${prefix}respond remove <trigger>' - Remove an auto-response.\n${emojis.general.dot} '${prefix}respond list' - List all auto-responses.`;
       await message.reply(cv2(container(msg, { title: 'Auto-Respond Manager', color: 'default' })) as any);
     }
@@ -64,7 +64,7 @@ export default {
         update: { response },
         create: { guildId: context.guildId!, trigger: trigger.toLowerCase(), response }
       });
-      await reply(cv2(container(`Successfully added auto-response for \`${trigger}\` ➔ ${response}`, { title: 'Creo Auto-Respond', color: 'success' })) as any);
+      await reply(cv2(container(`Successfully added auto-response for \`${trigger}\` ➔ ${response}`, { title: 'Zeta Auto-Respond', color: 'success' })) as any);
     } catch (e: any) {
       await reply(cv2(container(`Failed to add auto-response: ${e.message}`, { title: 'Auto Respond', color: 'error' })) as any);
     }
@@ -82,7 +82,7 @@ export default {
       await client.db.autoRespond.delete({
         where: { guildId_trigger: { guildId: context.guildId!, trigger: trigger.toLowerCase() } }
       });
-      await reply(cv2(container(`Successfully removed auto-response for \`${trigger}\`.`, { title: 'Creo Auto-Respond', color: 'success' })) as any);
+      await reply(cv2(container(`Successfully removed auto-response for \`${trigger}\`.`, { title: 'Zeta Auto-Respond', color: 'success' })) as any);
     } catch (e: any) {
       await reply(cv2(container(`No auto-response found for \`${trigger}\`.`, { title: 'Auto Respond', color: 'error' })) as any);
     }
@@ -94,7 +94,7 @@ export default {
 
     const responds = await client.db.autoRespond.findMany({ where: { guildId: context.guildId! } });
     if (responds.length === 0) {
-      return reply(cv2(container('No auto-responses are currently set up in this server.', { title: 'Creo Auto-Respond', color: 'default' })) as any);
+      return reply(cv2(container('No auto-responses are currently set up in this server.', { title: 'Zeta Auto-Respond', color: 'default' })) as any);
     }
 
     const content = responds.map(r => `\`${r.trigger}\` ➔ ${r.response}`).join('\n');
