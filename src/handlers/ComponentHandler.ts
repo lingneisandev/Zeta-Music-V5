@@ -630,7 +630,7 @@ export class ComponentHandler {
         let content = '';
         let title = '';
         const dot = emojis.general.dot;
-        const footer = `Laira • Made By FeroX Devs`;
+        const footer = `Zeta Music • Made with Hololive Development`;
 
         if (choice === 'general') {
           title = `${emojis.general.stats} General Statistics`;
@@ -649,14 +649,14 @@ export class ComponentHandler {
           title = `${emojis.general.system} System Statistics`;
           const mem = process.memoryUsage();
           content = `${dot} **Node.js Version:** \`${process.version}\`\n` +
-            `${dot} **Operating System:** \`Windows 11\`\n` +
+            `${dot} **Operating System:** \`${process.platform === 'linux' ? 'Linux' : process.platform === 'win32' ? 'Windows' : process.platform}\`\n` +
             `${dot} **Memory Usage:** \`${(mem.heapUsed / 1024 / 1024).toFixed(2)} MB / ${(mem.heapTotal / 1024 / 1024).toFixed(2)} MB\`\n` +
             `${dot} **CPU Arch:** \`${process.arch}\``;
         } else if (choice === 'team') {
           title = `${emojis.general.team} Development Team`;
-          content = `${dot} **Lead Developer:** \`ferox.dev\`\n` +
-            `${dot} **Contributors:** \`ferox_devs_group\`\n` +
-            `${dot} **Support Server:** [Click Here](https://discord.gg/ferox-music)`;
+          content = `${dot} **Lead Developer:** \`lingneisan.dev\`\n` +
+            `${dot} **Contributors:** \`hololive_development_team\`\n` +
+            `${dot} **Support Server:** [Click Here](https://discord.gg/VMbqMG7nUq)`;
         } else if (choice === 'ping') {
           title = `${emojis.general.ping} Latency Statistics`;
           content = `${dot} **Gateway Ping:** \`${this.client.ws.ping}ms\``; // simplified
