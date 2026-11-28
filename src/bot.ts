@@ -175,8 +175,8 @@ export class CreoClient extends Client {
   private initMusic() {
     const Nodes = [{
       name: process.env.LAVALINK_NAME || 'ZetaNode',
-      url: process.env.LAVALINK_HOST || process.env.LAVALINK_URL || 'nodelink.gdjkhp.com:443',
-      auth: process.env.LAVALINK_PASSWORD || process.env.LAVALINK_AUTH || 'youshallnotpass',
+      url: process.env.LAVALINK_HOST || process.env.LAVALINK_URL || 'lavalinkv4.serenetia.com:443',
+      auth: process.env.LAVALINK_PASSWORD || process.env.LAVALINK_AUTH || 'https://seretia.link/discord',
       secure: process.env.LAVALINK_SECURE === 'true'
     },
     {
