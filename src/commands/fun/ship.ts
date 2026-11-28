@@ -58,7 +58,7 @@ export default {
     try {
       const baseImagePath = join(process.cwd(), 'assets', 'ship.png');
       if (!existsSync(baseImagePath)) {
-        const msg = cv2(container('Ship template not found. Please make sure `assets/ship.png` exists.', { title: 'Zeta Fun', color: 'error' }));
+        const msg = cv2(container('Ship template not found. Please make sure `assets/ship.png` exists.', { title: 'Zeta Music Fun', color: 'error' }));
         if (isInteraction) return context.followUp(msg);
         if (processingMessage) await processingMessage.delete().catch(() => {});
         return context.reply(msg);
@@ -78,7 +78,7 @@ export default {
       ]);
 
       if (!av1 || !av2) {
-        const msg = cv2(container('Failed to download avatars.', { title: 'Creo Fun', color: 'error' }));
+        const msg = cv2(container('Failed to download avatars.', { title: 'Zeta Music Fun', color: 'error' }));
         if (isInteraction) return context.followUp(msg);
         if (processingMessage) await processingMessage.delete().catch(() => {});
         return context.reply(msg);
@@ -150,7 +150,7 @@ export default {
       }
     } catch (e) {
       console.error('Ship command error:', e);
-      const msg = cv2(container('Something went wrong generating the ship card.', { title: 'Zeta Fun', color: 'error' }));
+      const msg = cv2(container('Something went wrong generating the ship card.', { title: 'Zeta Music Fun', color: 'error' }));
       if (isInteraction) {
         if (context.deferred || context.replied) {
           await context.editReply(msg).catch(() => {});
