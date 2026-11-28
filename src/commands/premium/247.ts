@@ -30,7 +30,7 @@ export default {
         const gConf = await client.db.guildConfig.findUnique({ where: { guildId: message.guildId! } });
         if (gConf && gConf.prefix) prefix = gConf.prefix;
       } catch {}
-      await message.reply(cv2(container(`Usage: \`${prefix}247 activate\` or \`${prefix}247 deactivate\``, { title: 'Creo Premium', color: 'default' })) as any);
+      await message.reply(cv2(container(`Usage: \`${prefix}247 activate\` or \`${prefix}247 deactivate\``, { title: 'Zeta Music Premium', color: 'default' })) as any);
     }
   },
 
