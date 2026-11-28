@@ -106,7 +106,7 @@ export default {
         await context.reply(successMsg as any);
       }
     } catch (e: any) {
-      await reply(cv2(container(`Error playing liked songs: ${e.message}`, { title: 'Creo Liked Songs', color: 'error' })) as any);
+      await reply(cv2(container(`Error playing liked songs: ${e.message}`, { title: 'Zeta Music Liked Songs', color: 'error' })) as any);
     }
   }
 };
