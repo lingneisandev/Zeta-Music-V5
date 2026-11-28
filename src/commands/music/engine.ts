@@ -27,11 +27,11 @@ export default {
     const currentEngine = userConfig?.searchEngine || 'ytsearch';
 
     const engines: Record<string, { name: string, emoji: string }> = {
-      'ytsearch': { name: 'YouTube', emoji: '<:emoji_39:1454496634770817054>' },
-      'spsearch': { name: 'Spotify', emoji: '<:emoji_36:1454496625438228613>' },
-      'scsearch': { name: 'SoundCloud', emoji: '<:soundcloud:1513805493192360077>' },
-      'dzsearch': { name: 'Deezer', emoji: '<:Deezer:1515666887302840330>' },
-      'jssearch': { name: 'JioSaavn', emoji: '<:jiosaavn:1513805340691529728>' }
+      'ytsearch': { name: 'YouTube', emoji: '<:youtube:1540325795682066463>' },
+      'spsearch': { name: 'Spotify', emoji: '<:spotify:1540325885431910470>' },
+      'scsearch': { name: 'SoundCloud', emoji: '<:soundcloud:1576005390901186680>' },
+      'dzsearch': { name: 'Deezer', emoji: '<:deezer:1576011372066504864>' },
+      'jssearch': { name: 'JioSaavn', emoji: '<:jiosaavn:1576010781504573732>' }
     };
 
     const currentName = engines[currentEngine]?.name || currentEngine;
