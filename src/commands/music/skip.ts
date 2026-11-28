@@ -40,7 +40,7 @@ export default {
       player.skip();
       await reply(cv2(container('Skipped the current track.', { title: 'Zeta Music', color: 'default' })) as any);
     } catch (e: any) {
-      await reply(cv2(container(`Failed to skip track: ${e.message}`, { title: 'Creo Music', color: 'error' })) as any);
+      await reply(cv2(container(`Failed to skip track: ${e.message}`, { title: 'Zeta Music', color: 'error' })) as any);
     }
   }
 };
